@@ -1,0 +1,57 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+      <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+  <div id = "direction"> <p>RIGHT CLICK to CLEAR</p></div>
+  <div id = "name">
+		<canvas id="canvas" width="560" height="560" style="border:8px solid; float: left; border-radius: 5px; cursor: crosshair;"></canvas>
+			<!-- <input type="button" class ="myButton" value = "predict"/> -->
+			<!-- <input type="button" id="clearButton"  value="Clear"> -->
+        <div id = "result">
+          <p>There is a 00% chance that it is 0 </p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p>| ---------------------------------------------------------------100%</p>
+          <p>| 0 : </p>
+          <p>| 1 : </p>
+          <p>| 2 : </p>
+          <p>| 3 : </p>
+          <p>| 4 : </p>
+          <p>| 5 : </p>
+          <p>| 6 : </p>
+          <p>| 7 : </p>
+          <p>| 8 : </p>
+          <p>| 9 : </p>
+          <p>| ---------------------------------------------------------------100%</p>
+        </div>
+
+
+
+
+  		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+	    <script src="{% static 'index.js' %}"></script>
+	    <script type="text/javascript">
+              canvas = document.getElementById("canvas");
+              ctx = canvas.getContext("2d");
+              ctx.lineWidth=35;
+      </script>
+	    <script type="text/javascript">
+
+      $("#clearButton").click(function(){
+
+      			$('#result').text("");
+
+      });
+
+	   </script>
+   </div>
+</body>
+</html>
